@@ -82,6 +82,7 @@ namespace CodingChallange
 
                 //return the list of subarrays
                 return result;
+
             }
         }
     }
