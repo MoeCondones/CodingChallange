@@ -27,27 +27,29 @@ namespace CodingChallange
 
         public class ArrayDiv
         {
+            //this method divides an array into N equally sized subarrays. if the size of the original array,
+            //cannot be divided by N, the final part will have a length equal to the remainder.
             public static List<int[]> divArray(int[] array,int N)
             {
                 //creating a new list to store the subarrays
                 List<int[]> result = new List<int[]>();
 
-                //this line is to check if the array is empty or not
+                //this checks if the array is empty or not
                 if (array == null || array.Length == 0)
                 {
                     //if the array is empty you return an empty list
                     return result;
                 }
-                // this line is for calculating each subarray except for the last one
+                // this calculates each subarray except for the last one
                 int subArrayLength = array.Length / N;
-                // this line is for calculating the number of elements in the last subarray 
+                // this calculates the number of elements in the last subarray 
                 int remainderLength = array.Length % N;
 
 
-                // now we need to create variables that keep track of each start indecies of the subarrays
+                //this creates variables that keep track of each start indecies of the subarrays
                 int startIndex = 0;
 
-                //we create a loop to divide the array into subarrays
+                //this creates a loop to divide the array into subarrays
                 for (int i = 0; i < N; i++)
                 {
                     //this calculates the ending index of the current subarray
@@ -60,10 +62,10 @@ namespace CodingChallange
                         endIndex++;
                     }
 
-                    //we need to create a new subarray with the appropriate size 
+                    //this creates a new subarray with the appropriate size 
                     int[] subarray = new int[endIndex - startIndex];
 
-                    //we need to now copy the elements from the original array to the subarray
+                    //this copies the elements from the original array to the subarray
                     for (int j = startIndex; j < endIndex; j++)
                     {
                         //this calculate the index of the subarray from the index of the original array
@@ -82,7 +84,6 @@ namespace CodingChallange
 
                 //return the list of subarrays
                 return result;
-
             }
         }
     }
